@@ -16,4 +16,10 @@ for (const newSquare of hoverOver){
         newSquare.style.backgroundColor = "red";
 
     })
-}
+};
+
+function resetColor(){
+    for (const newSquare of hoverOver){
+        newSquare.style.backgroundColor = "";
+}}
+
