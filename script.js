@@ -20,7 +20,7 @@ function colorChange(){
             newSquare.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
 
     })
-};}
+};};
 
 let resetButton = document.querySelector('#reset')
 
@@ -28,14 +28,14 @@ resetButton.onclick = function(){
     resetColor();
     resetGrid();
     resize();
-}
+};
 
 function resetColor(){
     const hoverOver = document.querySelectorAll('.newSquare');
     for (const newSquare of hoverOver){
         newSquare.style.backgroundColor = "";
     }
-}
+};
 
 function resize(){
     let size = window.prompt("Select size of grid 100 or under", 16);
@@ -45,16 +45,19 @@ function resize(){
     if (size < 101){
         grid(size);
     } else {
-         text = "Select a size under 101";
+         alert("Select a size under 101");
+         container.style.gridTemplateColumns = null;
+         container.style.gridTemplateRows = null;
+         grid(16);
  }
-}
+};
 
 function resetGrid(){
     const hoverOver = document.querySelectorAll('.newSquare');
     hoverOver.forEach(square => square.remove());
-}
+};
 
 function randomColor(){
     color = Math.floor(Math.random()*255);
     return color;
-}
+};
