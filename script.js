@@ -17,7 +17,7 @@ function colorChange(){
     const hoverOver = document.querySelectorAll('.newSquare');
     for (const newSquare of hoverOver){
         newSquare.addEventListener('mouseover',() =>{
-            newSquare.style.backgroundColor = "red";
+            newSquare.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
 
     })
 };}
@@ -52,4 +52,9 @@ function resize(){
 function resetGrid(){
     const hoverOver = document.querySelectorAll('.newSquare');
     hoverOver.forEach(square => square.remove());
+}
+
+function randomColor(){
+    color = Math.floor(Math.random()*255);
+    return color;
 }
