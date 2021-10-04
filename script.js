@@ -39,6 +39,9 @@ function resetColor(){
 
 function resize(){
     let size = window.prompt("Select size of grid 100 or under", 16);
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    
     if (size < 101){
         grid(size);
     } else {
