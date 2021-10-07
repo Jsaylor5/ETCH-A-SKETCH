@@ -32,7 +32,6 @@ function greyColor(){
     const hoverOver = document.querySelectorAll('.newSquare');
     for (const newSquare of hoverOver){
         newSquare.addEventListener('mouseover',() => {
-         
         if(newSquare.dataset.color == 0){
             newSquare.dataset.color = 0
         }else if (newSquare.dataset.color <= 90 && newSquare.dataset.color >=10){
@@ -40,7 +39,6 @@ function greyColor(){
         }else{
             newSquare.setAttribute('data-color', 90);
         }
-        console.log(newSquare.dataset.color)
         newSquare.style.backgroundColor = `hsl(${randomHue()}, 100%, ${newSquare.dataset.color}%)`;
         })
     }
