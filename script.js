@@ -3,19 +3,19 @@ const container = document.querySelector('#container');
 grid(16, randomColor)
 
 function grid(inputNum, inputColor) {
-for (let i=0; i<inputNum; i++){
-    for (let a=0; a<inputNum; a++){
-    const square = document.createElement('div');
-    square.classList.add('newSquare'); 
-    container.appendChild(square) 
- }};
+    for (let i=0; i<inputNum; i++){
+        for (let a=0; a<inputNum; a++){
+        const square = document.createElement('div');
+        square.classList.add('newSquare'); 
+        container.appendChild(square) 
+    }};
 
-if (inputColor == randomColor){
-    colorChange();
-}
-else if (inputColor == greyColor){
-    greyColor();
-}
+    if (inputColor == randomColor){
+        colorChange();
+    }
+    else if (inputColor == greyColor){
+        greyColor();
+    }
 };
 
 function colorChange(){
@@ -46,21 +46,20 @@ function greyColor(){
 
 
 let colorButton = document.querySelector('#color')
-colorButton.onclick = () => {
+colorButton.addEventListener('click', () => {
     grid(resize, randomColor)
-};
+});
 
 let greyButton = document.querySelector('#grey')
-greyButton.onclick = () => {
+greyButton.addEventListener('click', () => {
     grid(resize, greyColor)
-};
+});
 
 let resetButton = document.querySelector('#reset')
-resetButton.onclick = () => {
+resetButton.addEventListener('click', () => {
     resetGrid();
     resize();
-};
-
+});
 
 function resize(){
     let size = window.prompt("Select size of grid 100 or under", 16);
